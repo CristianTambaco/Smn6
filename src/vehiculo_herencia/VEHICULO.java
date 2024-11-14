@@ -6,6 +6,7 @@ public class VEHICULO {
     String modelo;
     String marca;
     int anio;
+    String color;
     double kilometraje;
 
     //metodo constructor
@@ -14,6 +15,7 @@ public class VEHICULO {
         this.modelo =modelo;
         this.anio = anio;
         this.kilometraje =kilometraje;
+        this.color =color;
     }
 
 
@@ -21,7 +23,7 @@ public class VEHICULO {
 
     public void imprimir() {
 
-        System.out.println("El modelo es: " + modelo + "la marca es: " + marca + " el anio es: " + anio + " el kilometraje es:" + kilometraje);
+        System.out.println("El modelo es: " + modelo + ", la marca es: " + marca + ", el anio es: " + anio + ", el kilometraje es:" + kilometraje);
     }
 
 
@@ -29,9 +31,13 @@ public class VEHICULO {
 
         public static class Coche extends VEHICULO {
 
+            String color;
 
-            public Coche(String marca, String modelo, int anio, double kilometraje) {
+
+            public Coche(String marca, String modelo, int anio, double kilometraje, String color) {
                 super(marca, modelo, anio, kilometraje);  //van la parte de informacion
+
+                this.color =color;
 
 
             }
@@ -65,7 +71,7 @@ public class VEHICULO {
             System.out.println();
 
             //crear objeto datos quemados
-            Coche coche1 = new Coche("Chevrolet", "Family", 2024, 160);
+            Coche coche1 = new Coche("Chevrolet", "Family", 2024, 160, "verde");
             Motocicleta moto1 = new Motocicleta("Suzuki", "Modelomoto", 2020, 2000);
             Camion camion1 = new Camion("Hino", "Hinomodelo", 2023, 8000);
 
@@ -73,13 +79,7 @@ public class VEHICULO {
             moto1.imprimir();
             camion1.imprimir();
 
-
         }
-
-
-
-
-
 
 
 }
